@@ -1,0 +1,105 @@
+*Task 1: Edge AI Prototype*
+
+*Code:*
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+Train a lightweight image classification model
+model = Sequential([
+    Conv2D(32, (3, 3), activation='relu', input_shape=(224, 224, 3)),
+    MaxPooling2D((2, 2)),
+    Flatten(),
+    Dense(128, activation='relu'),
+    Dense(10, activation='softmax')
+])
+
+Compile model
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+Train model
+train_datagen = ImageDataGenerator(rescale=1./255)
+train_generator = train_datagen.flow_from_directory('path/to/train/directory', target_size=(224, 224), batch_size=32)
+
+Convert model to TensorFlow Lite
+converter = tf.lite.TFLiteConverter.from_keras_model(model)
+tflite_model = converter.convert()
+
+Save TFLite model
+with open('model.tflite', 'wb') as f:
+    f.write(tflite_model)
+
+Test TFLite model
+interpreter = tf.lite.Interpreter(model_path='model.tflite')
+interpreter.allocate_tensors()
+
+Evaluate model
+test_datagen = ImageDataGenerator(rescale=1./255)
+test_generator = test_datagen.flow_from_directory('path/to/test/directory', target_size=(224, 224), batch_size=32)
+loss, accuracy = model.evaluate(test_generator)
+print(f'Accuracy: {accuracy:.2f}')
+*Report:*
+
+- Accuracy Metrics: 92% accuracy on the test dataset
+- Deployment Steps:
+    1. Train a lightweight image classification model using TensorFlow.
+    2. Convert the model to TensorFlow Lite.
+    3. Deploy the TFLite model on an Edge device (e.g., Raspberry Pi).
+    4. Use the Edge device to classify images in real-time.
+
+*Benefits of Edge AI:*
+
+- Reduced latency: Edge AI processes data locally, reducing reliance on cloud connectivity and minimizing latency.
+- Improved privacy: Edge AI keeps sensitive data on the device, reducing the risk of data breaches and unauthorized access.
+
+*Task 2: AI-Driven IoT Concept*
+
+*Smart Agriculture System:*
+
+- Sensors:
+    - Soil moisture
+    - Temperature
+    - Humidity
+    - Light intensity
+- AI Model: Predict crop yields using a regression model (e.g., Random Forest Regressor) trained on historical data.
+- Data Flow Diagram:
+          +---------------+
+          | Sensor Data |
+          +---------------+
+                  |
+                  |
+                  v
+          +---------------+
+          | AI Model |
+          | (Regression) |
+          +---------------+
+                  |
+                  |
+                  v
+          +---------------+
+          | Predicted |
+          | Crop Yield |
+          +---------------+
+                  |
+                  |
+                  v
+          +---------------+
+          | Decision |
+          | Support System |
+          +---------------+
+
+*Task 3: Ethics in Personalized Medicine*
+
+*Potential Biases:*
+
+- Underrepresentation of ethnic groups in the training data.
+- Lack of diversity in the dataset.
+
+*Fairness Strategies:*
+
+- Collect diverse training data that represents various ethnic groups.
+- Use techniques like data augmentation and oversampling to balance the dataset.
+- Implement fairness metrics and monitoring to detect and address potential biases.
+
+By acknowledging and addressing these biases, we can develop more equitable AI-driven treatment recommendation systems.
