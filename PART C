@@ -1,0 +1,41 @@
+*Ethics & Bias*
+
+*Biased Training Data:* Biased training data may lead to:
+
+1. *Disparate impact*: Certain patient populations (e.g., racial or socioeconomic groups) may be more likely to be misclassified, leading to unequal access to resources and care.
+2. *Inaccurate predictions*: Biased models may not accurately predict readmission risk for patients from diverse backgrounds, potentially leading to:
+    - Delayed or inadequate treatment
+    - Increased healthcare disparities
+    - Poor patient outcomes
+
+*Mitigation Strategy:*
+
+1. *Data augmentation and diversification*: Collect and integrate more diverse data, including:
+    - Data from multiple hospitals and healthcare systems
+    - Data from patients with diverse socioeconomic and demographic backgrounds
+    - Data from various clinical settings (e.g., primary care, specialty care)
+
+This can help reduce bias and improve model generalizability.
+
+*Trade-offs*
+
+*Model Interpretability vs. Accuracy:*
+
+1. *Interpretability*: Important in healthcare for:
+    - Understanding model decisions
+    - Identifying potential biases
+    - Building trust with clinicians and patients
+2. *Accuracy*: Critical for:
+    - Effective patient care
+    - Reducing readmissions
+    - Improving patient outcomes
+
+*Trade-off:* More complex models (e.g., deep learning) may offer higher accuracy but are often less interpretable. Simpler models (e.g., logistic regression) may be more interpretable but less accurate.
+
+*Limited Computational Resources:*
+
+1. *Model choice*: May be limited to simpler models or models that are more computationally efficient (e.g., decision trees, random forests)
+2. *Hyperparameter tuning*: May be limited, potentially affecting model performance
+3. *Model deployment*: May require more efficient deployment strategies (e.g., model pruning, knowledge distillation)
+
+In such cases, balancing model accuracy and interpretability is crucial, and techniques like model explainability (e.g., SHAP, LIME) can help provide insights into model decisions.
