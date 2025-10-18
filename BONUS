@@ -1,0 +1,59 @@
+*Reflection*
+
+*Most Challenging Part:* Data Preprocessing and Feature Engineering
+
+*Why:*
+
+1. Handling missing values and outliers
+2. Identifying relevant features from complex clinical data
+3. Ensuring data quality and consistency
+
+*Improvement with More Time/Resources:*
+
+1. *Data exploration and visualization*: In-depth analysis to understand data distributions and relationships
+2. *Collaboration with clinicians*: Working closely with healthcare professionals to identify relevant features and validate findings
+3. *Advanced feature engineering techniques*: Utilizing techniques like transfer learning, embeddings, or domain-specific feature extraction methods
+
+*Diagram: AI Development Workflow Flowchart*
+                                      +-------------------+
+                                      | Problem Definition |
+                                      +-------------------+
+                                             |
+                                             |
+                                             v
+                                      +-------------------+
+                                      | Data Collection |
+                                      | (EHRs, demographics) |
+                                      +-------------------+
+                                             |
+                                             |
+                                             v
+                                      +-------------------+
+                                      | Data Preprocessing |
+                                      | (cleaning, feature |
+                                      | engineering, etc.) |
+                                      +-------------------+
+                                             |
+                                             |
+                                             v
+                                      +-------------------+
+                                      | Model Development |
+                                      | (training, tuning) |
+                                      +-------------------+
+                                             |
+                                             |
+                                             v
+                                      +-------------------+
+                                      | Model Evaluation |
+                                      | (metrics, validation) |
+                                      +-------------------+
+                                             |
+                                             |
+                                             v
+                                      +-------------------+
+                                      | Deployment |
+                                      | (integration, |
+                                      | monitoring) |
+                                      +-------------------+
+
+This flowchart illustrates the key stages of the AI development workflow, from problem definition to deployment.
