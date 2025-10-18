@@ -1,0 +1,61 @@
+*Problem Definition*
+
+*Hypothetical AI Problem:* Predicting Customer Churn for a Telecom Company
+
+*Objectives:*
+
+1. Identify customers at high risk of churning
+2. Determine the most important factors contributing to customer churn
+3. Develop a predictive model to inform retention strategies
+
+*Stakeholders:*
+
+1. Telecom Company Executives
+2. Customer Service Managers
+
+*KPI:* Customer retention rate
+
+*Data Collection & Preprocessing*
+
+*Data Sources:*
+
+1. Customer demographic data (age, location, etc.)
+2. Call records and billing data
+
+*Potential Bias:* Selection bias due to incomplete demographic data
+
+*Preprocessing Steps:*
+
+1. Handling missing values using imputation or interpolation
+2. Normalizing/scaling numerical features (e.g., call duration, bill amount)
+3. Encoding categorical variables (e.g., customer plan type)
+
+*Model Development*
+
+*Model:* Random Forest Classifier
+
+*Justification:* Handles high-dimensional data, robust to outliers, and provides feature importance scores
+
+*Data Split:*
+
+- Training set (70%): Used for model training
+- Validation set (15%): Used for hyperparameter tuning
+- Test set (15%): Used for final model evaluation
+
+*Hyperparameters to Tune:*
+
+1. Number of estimators (trees): Controls model complexity and accuracy
+2. Maximum depth: Controls model complexity and risk of overfitting
+
+*Evaluation & Deployment*
+
+*Evaluation Metrics:*
+
+1. Accuracy: Measures overall model performance
+2. AUC-ROC: Measures model's ability to distinguish between churn and non-churn customers
+
+*Concept Drift:* Changes in customer behavior or market conditions that can affect model performance over time
+
+*Monitoring Concept Drift:* Regularly update the model with new data and monitor performance metrics (e.g., accuracy, AUC-ROC)
+
+*Technical Challenge:* Scalability - handling large volumes of customer data and ensuring model predictions are generated in real-time to inform customer service interactions.
